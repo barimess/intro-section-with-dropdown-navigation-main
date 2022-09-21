@@ -24,6 +24,31 @@ body {
   font-size: 18px;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  outline: 1px blue solid;
+  align-items: center;
+  padding: 16px;
+}
+
+.header__collapsable {
+  outline: 1px red solid;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-basis: 100%;
+}
+
+.header__navbar__list {
+  list-style-type: none;
+  display: flex;
+  gap: 4%;
+}
+.link {
+  text-decoration: none;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;

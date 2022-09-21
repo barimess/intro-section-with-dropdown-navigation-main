@@ -24,6 +24,43 @@ body {
   padding: 0;
   font-size: 18px;
 }
+// split the header into 2 sections collapsable and not collapsable.
+.header {
+  display: flex;
+  flex-direction: row;
+  outline: 1px blue solid;
+  align-items: center;
+  padding: 16px;
+}
+//split the collapsable part into 2 sections with space-between.
+.header__collapsable {
+  outline: 1px red solid;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  flex-basis: 100%;
+}
+
+//unordered list into links.
+.header__navbar {
+  &__list {
+    list-style-type: none;
+    display: flex;
+    gap: 4%;
+
+    &__item {
+    }
+  }
+}
+
+// navbar links
+//TODO: fix colors and hoverablity
+.link {
+  text-decoration: none;
+}
+
+//TODO: add buttons styling.
 
 .attribution {
   font-size: 11px;
