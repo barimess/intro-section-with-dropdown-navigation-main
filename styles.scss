@@ -28,30 +28,33 @@ body {
 .header {
   display: flex;
   flex-direction: row;
-  outline: 1px blue solid;
   align-items: center;
   padding: 16px;
 }
 //split the collapsable part into 2 sections with space-between.
 .header__collapsable {
-  outline: 1px red solid;
-  display: flex;
+  //TODO: make sure to change to display flex for desktop!
+  display: none;
   flex-flow: row wrap;
   justify-content: space-between;
 
   flex-basis: 100%;
 }
 
-//unordered list into links.
+//navbar links and hoverability.
 .header__navbar {
   &__list {
     list-style-type: none;
     display: flex;
-    gap: 14%;
+    @media (min-width: 670px) {
+      gap: 4%;
+    }
+    @media (min-width: 770px) {
+      gap: 14%;
+    }
 
     &__item {
       min-width: fit-content;
-      flex-basis: 50%;
       cursor: pointer;
       transition: color 0.3s;
       &:first-child {
@@ -72,15 +75,72 @@ body {
   }
 }
 
-// navbar links
-//TODO: fix colors and hoverablity
 .link {
   text-decoration: none;
   color: var(--Medium--Gray);
 }
 
+.header__buttons {
+  display: flex;
+  align-items: center;
+}
 //TODO: add buttons styling.
+.header__btn__login {
+  background: none;
+  color: var(--Medium--Gray);
+  border: none;
+  font-size: 18px;
+  padding: 0 36px;
+  cursor: pointer;
+  &:hover {
+    color: var(--Almost--Black);
+  }
+}
 
+.header__btn__register {
+  background: none;
+  color: var(--Medium--Gray);
+  border: 2px solid var(--Medium--Gray);
+  border-radius: 14px;
+  font-size: 18px;
+  padding: 8px 16px;
+  cursor: pointer;
+  &:hover {
+    color: var(--Almost--Black);
+    border-color: var(--Almost--Black);
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 16px;
+  right: 8px;
+}
+
+.maincontent {
+  display: flex;
+  flex-flow: column-reverse wrap;
+}
+
+//TODO: figure out why image not getting smaller.
+//TODO: make text more appealing.
+.maincontent__textualcontent {
+  max-width: 375px;
+}
+
+.maincontent__textualcontent__title {
+  color: var(--Almost--Black);
+  font-size: 6rem;
+  margin: 128px 0 32px 0;
+  text-align: center;
+}
+
+.maincontent__textualcontent__description {
+  color: var(--Medium--Gray);
+  margin: 16px;
+  font-size: 18px;
+  text-align: center;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
