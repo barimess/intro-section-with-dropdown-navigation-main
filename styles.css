@@ -56,16 +56,16 @@ body {
 .header__navbar__list__item:first-child {
   font-weight: 700;
 }
-.header__navbar__list__item svg path:hover {
+.header__navbar__list__item:hover a {
+  color: var(--Almost--Black);
+}
+.header__navbar__list__item:hover svg path {
   stroke: var(--Almost--Black);
 }
 
 .link {
   text-decoration: none;
   color: var(--Medium--Gray);
-}
-.link:hover {
-  color: var(--Almost--Black);
 }
 
 .attribution {

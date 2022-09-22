@@ -57,13 +57,15 @@ body {
       &:first-child {
         font-weight: 700;
       }
-      a {
-      }
 
-      //hover should change both on the same time ?
-      svg {
-        path:hover {
-          stroke: var(--Almost--Black);
+      &:hover {
+        a {
+          color: var(--Almost--Black);
+        }
+        svg {
+          path {
+            stroke: var(--Almost--Black);
+          }
         }
       }
     }
@@ -75,9 +77,6 @@ body {
 .link {
   text-decoration: none;
   color: var(--Medium--Gray);
-  &:hover {
-    color: var(--Almost--Black);
-  }
 }
 
 //TODO: add buttons styling.
