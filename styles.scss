@@ -47,9 +47,25 @@ body {
   &__list {
     list-style-type: none;
     display: flex;
-    gap: 4%;
+    gap: 14%;
 
     &__item {
+      min-width: fit-content;
+      flex-basis: 50%;
+      cursor: pointer;
+      transition: color 0.3s;
+      &:first-child {
+        font-weight: 700;
+      }
+      a {
+      }
+
+      //hover should change both on the same time ?
+      svg {
+        path:hover {
+          stroke: var(--Almost--Black);
+        }
+      }
     }
   }
 }
@@ -58,6 +74,10 @@ body {
 //TODO: fix colors and hoverablity
 .link {
   text-decoration: none;
+  color: var(--Medium--Gray);
+  &:hover {
+    color: var(--Almost--Black);
+  }
 }
 
 //TODO: add buttons styling.

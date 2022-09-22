@@ -43,10 +43,29 @@ body {
 .header__navbar__list {
   list-style-type: none;
   display: flex;
-  gap: 4%;
+  gap: 14%;
 }
+.header__navbar__list__item {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  flex-basis: 50%;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.header__navbar__list__item:first-child {
+  font-weight: 700;
+}
+.header__navbar__list__item svg path:hover {
+  stroke: var(--Almost--Black);
+}
+
 .link {
   text-decoration: none;
+  color: var(--Medium--Gray);
+}
+.link:hover {
+  color: var(--Almost--Black);
 }
 
 .attribution {
