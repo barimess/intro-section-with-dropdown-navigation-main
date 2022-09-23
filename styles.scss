@@ -124,26 +124,68 @@ body {
 
 //TODO: figure out why image not getting smaller.
 //TODO: make text more appealing.
-.maincontent__textualcontent {
-  max-width: 375px;
+// .maincontent__textualcontent {
+// }
+
+.maincontent__visualcontent__hero {
+  margin-top: 4px;
+  max-width: 100%;
 }
 
 .maincontent__textualcontent__title {
   color: var(--Almost--Black);
-  font-size: 6rem;
-  margin: 128px 0 32px 0;
+  font-size: 2.1rem;
+  margin: 64px 0 32px 0;
   text-align: center;
+}
+
+.maincontent__textualcontent__btn {
+  background-color: var(--Almost--Black);
+  color: var(--Almost-White);
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 14px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  margin: 32px auto;
+  right: 0;
+  left: 0;
+  display: block;
 }
 
 .maincontent__textualcontent__description {
   color: var(--Medium--Gray);
+  line-height: 1.7rem;
   margin: 16px;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 }
+
+.companies {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 32px;
+
+  @media (min-width: 500px) {
+    &__logo {
+      max-width: 90px;
+    }
+  }
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 8px;
+  background-color: var(--Almost-White);
+  color: var(--Medium--Gray);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   a {
     color: hsl(228, 45%, 44%);
