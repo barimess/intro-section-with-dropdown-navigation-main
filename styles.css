@@ -32,32 +32,50 @@ body {
 }
 
 .header__collapsable {
-  display: none;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  flex-basis: 100%;
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: var(--Almost-White);
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+@media (min-width: 900px) {
+  .header__collapsable {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: transparent;
+    position: static;
+    flex-basis: 100%;
+  }
 }
 
 .header__navbar__list {
   list-style-type: none;
   display: flex;
+  flex-direction: column;
+  padding: 32px;
+  gap: 10%;
 }
-@media (min-width: 670px) {
+@media (min-width: 900px) {
   .header__navbar__list {
-    gap: 4%;
-  }
-}
-@media (min-width: 770px) {
-  .header__navbar__list {
-    gap: 14%;
+    flex-direction: row;
+    padding: 0 32px;
   }
 }
 .header__navbar__list__item {
+  margin-top: 32px;
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   cursor: pointer;
   transition: color 0.3s;
+}
+@media (min-width: 900px) {
+  .header__navbar__list__item {
+    margin-top: 0;
+  }
 }
 .header__navbar__list__item:first-child {
   font-weight: 700;
@@ -76,7 +94,13 @@ body {
 
 .header__buttons {
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+@media (min-width: 900px) {
+  .header__buttons {
+    flex-direction: row;
+  }
 }
 
 .header__btn__login {
@@ -92,6 +116,8 @@ body {
 }
 
 .header__btn__register {
+  margin-top: 16px;
+  max-width: 100%;
   background: none;
   color: var(--Medium--Gray);
   border: 2px solid var(--Medium--Gray);
@@ -99,6 +125,12 @@ body {
   font-size: 18px;
   padding: 8px 16px;
   cursor: pointer;
+}
+@media (min-width: 900px) {
+  .header__btn__register {
+    margin-top: 0;
+    max-width: auto;
+  }
 }
 .header__btn__register:hover {
   color: var(--Almost--Black);

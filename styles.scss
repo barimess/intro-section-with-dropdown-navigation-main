@@ -33,12 +33,23 @@ body {
 }
 //split the collapsable part into 2 sections with space-between.
 .header__collapsable {
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: var(--Almost-White);
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
   //TODO: make sure to change to display flex for desktop!
-  display: none;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  @media (min-width: 900px) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: transparent;
+    position: static;
 
-  flex-basis: 100%;
+    flex-basis: 100%;
+  }
 }
 
 //navbar links and hoverability.
@@ -46,14 +57,21 @@ body {
   &__list {
     list-style-type: none;
     display: flex;
-    @media (min-width: 670px) {
-      gap: 4%;
+    //over ride this flex direction
+    flex-direction: column;
+    padding: 32px;
+    @media (min-width: 900px) {
+      flex-direction: row;
+      padding: 0 32px;
     }
-    @media (min-width: 770px) {
-      gap: 14%;
-    }
-
+    gap: 10%;
     &__item {
+      margin-top: 32px;
+
+      @media (min-width: 900px) {
+        margin-top: 0;
+      }
+
       min-width: fit-content;
       cursor: pointer;
       transition: color 0.3s;
@@ -82,6 +100,10 @@ body {
 
 .header__buttons {
   display: flex;
+  flex-direction: column;
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
   align-items: center;
 }
 //TODO: add buttons styling.
@@ -98,6 +120,12 @@ body {
 }
 
 .header__btn__register {
+  margin-top: 16px;
+  max-width: 100%;
+  @media (min-width: 900px) {
+    margin-top: 0;
+    max-width: auto;
+  }
   background: none;
   color: var(--Medium--Gray);
   border: 2px solid var(--Medium--Gray);
